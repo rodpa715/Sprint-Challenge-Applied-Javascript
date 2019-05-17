@@ -15,10 +15,12 @@ class Carousel {
 
     goLeft(){
         if (this.currentIndex > 0){ //if the current index is bigger than 0 
+            // this.slide();
             this.currentIndex--; //decrement one on the index 
             this.hide();
             this.show();
         } else if(this.currentIndex === 0){    //if the current index is equal to 0 (the first position of the array)
+            // this.slide();
             this.currentIndex = this.imagesNodeList.length - 1 //set the current index to the last position of the array (loop back to end)
             this.hide();
             this.show();
@@ -36,7 +38,9 @@ class Carousel {
             this.show();
         }
     }
-
+    slide(){
+        this.imagesNodeList[this.currentIndex].classList.toggle("slide") 
+    }
     hide(){
         this.imagesNodeList.forEach( img => img.style.display ="none") //hide all
     }
